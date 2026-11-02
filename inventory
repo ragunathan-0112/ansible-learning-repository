@@ -1,1 +1,14 @@
+[fedora]
 192.168.149.129
+
+[windows]
+192.168.149.128
+
+[windows:vars]
+ansible_connection=winrm
+ansible_port=5986
+ansible_user=aero\sam
+ansible_password=NTgl0balAdm1n
+ansible_winrm_transport=ntlm
+#ansible_winrm_server_cert_validation=ignore
+#ansible_winrm_scheme=http
