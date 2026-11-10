@@ -1,0 +1,11 @@
+---
+- name: testing variables
+  hosts: fedora
+  become: true
+  vars_files:
+    - ./vars/variables.yml
+  tasks: 
+    - name: testing variables
+      ansible.builtin.service:
+        name: "{{  apache_service  }}"
+        state: stopped
