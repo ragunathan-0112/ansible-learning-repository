@@ -1,0 +1,13 @@
+---
+- name: testing the copy module
+  hosts: fedora
+  become: true
+  tasks:
+    - name: copying file
+      ansible.builtin.copy:
+        src: /home/ragu/file_created_for_ansibleCOPY
+        dest: /home/ragu/
+        owner: ragu
+        group: ragu
+        mode: '0777'
+        backup: yes

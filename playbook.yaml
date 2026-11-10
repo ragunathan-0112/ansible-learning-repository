@@ -1,0 +1,19 @@
+---
+- name: update dnf cache
+  hosts: fedora
+  become: true
+  tasks:
+    - name: ping status
+      ansible.builtin.ping:
+        data: success
+    - name: updating the cache of dnf
+      ansible.builtin.dnf5:
+        name: httpd
+        state: present
+    - name: removing unsed dependencies
+      ansible.builtin.dnf5:
+        autoremove: true
+    - name: removing httpd package
+      ansible.builtin.dnf5:
+        name: httpd
+        state: removed

@@ -1,0 +1,253 @@
+ansible-playbook [core 2.20.7]
+  config file = /home/ragu/ansible_course/ansible.cfg
+  configured module search path = ['/home/ragu/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3.14/site-packages/ansible
+  ansible collection location = /home/ragu/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/sbin/ansible-playbook
+  python version = 3.14.10 (main, Oct 26 2026, 00:00:00) [GCC 16.2.1 20260819 (Red Hat 16.2.1-2)] (/usr/bin/python3)
+  jinja version = 3.1.6
+  pyyaml version = 6.0.3 (with libyaml v0.2.5)
+Using /home/ragu/ansible_course/ansible.cfg as config file
+host_list declined parsing /home/ragu/ansible_course/inventory as it did not pass its verify_file() method
+script declined parsing /home/ragu/ansible_course/inventory as it did not pass its verify_file() method
+auto declined parsing /home/ragu/ansible_course/inventory as it did not pass its verify_file() method
+Parsed /home/ragu/ansible_course/inventory inventory source with ini plugin
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: playbook.yaml ********************************************************
+1 plays in playbook.yaml
+
+PLAY [update dnf cache] ********************************************************
+
+TASK [Gathering Facts] *********************************************************
+task path: /home/ragu/ansible_course/playbook.yaml:2
+<192.168.1.34> ESTABLISH SSH CONNECTION FOR USER: None
+<192.168.1.34> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 192.168.1.34 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<192.168.1.34> (0, b'/home/ragu\n', b'')
+<192.168.1.34> ESTABLISH SSH CONNECTION FOR USER: None
+<192.168.1.34> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 192.168.1.34 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/ragu/.ansible/tmp `"&& mkdir "` echo /home/ragu/.ansible/tmp/ansible-tmp-1793788286.440793-5473-258822211667990 `" && echo ansible-tmp-1793788286.440793-5473-258822211667990="` echo /home/ragu/.ansible/tmp/ansible-tmp-1793788286.440793-5473-258822211667990 `" ) && sleep 0'"'"''
+<192.168.1.34> (0, b'ansible-tmp-1793788286.440793-5473-258822211667990=/home/ragu/.ansible/tmp/ansible-tmp-1793788286.440793-5473-258822211667990\n', b'')
+<192.168.1.34> Attempting python interpreter discovery.
+<192.168.1.34> ESTABLISH SSH CONNECTION FOR USER: None
+<192.168.1.34> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 192.168.1.34 '/bin/sh -c '"'"'echo FOUND; command -v '"'"'"'"'"'"'"'"'python3.14'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.13'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.12'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.11'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.10'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.9'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/bin/python3'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3'"'"'"'"'"'"'"'"'; echo ENDFOUND && sleep 0'"'"''
+<192.168.1.34> (0, b'FOUND\n/usr/bin/python3.14\n/usr/bin/python3\n/usr/bin/python3\nENDFOUND\n', b'')
+Using module file /usr/lib/python3.14/site-packages/ansible/modules/setup.py
+<192.168.1.34> PUT /home/ragu/.ansible/tmp/ansible-local-5417vzr6hkbi/tmpizge29vq TO /home/ragu/.ansible/tmp/ansible-tmp-1793788286.440793-5473-258822211667990/AnsiballZ_setup.py
+<192.168.1.34> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 '[192.168.1.34]'
+<192.168.1.34> (0, b'sftp> put /home/ragu/.ansible/tmp/ansible-local-5417vzr6hkbi/tmpizge29vq /home/ragu/.ansible/tmp/ansible-tmp-1793788286.440793-5473-258822211667990/AnsiballZ_setup.py\n', b'')
+<192.168.1.34> ESTABLISH SSH CONNECTION FOR USER: None
+<192.168.1.34> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 192.168.1.34 '/bin/sh -c '"'"'chmod u+rwx /home/ragu/.ansible/tmp/ansible-tmp-1793788286.440793-5473-258822211667990/ /home/ragu/.ansible/tmp/ansible-tmp-1793788286.440793-5473-258822211667990/AnsiballZ_setup.py && sleep 0'"'"''
+<192.168.1.34> (0, b'', b'')
+<192.168.1.34> ESTABLISH SSH CONNECTION FOR USER: None
+<192.168.1.34> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 -tt 192.168.1.34 '/bin/sh -c '"'"'sudo -H -S -p "[sudo via ansible, key=pmxnomfucvhzytrtcxzfdodzkizgbemn] password:" -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-pmxnomfucvhzytrtcxzfdodzkizgbemn ; /usr/bin/python3.14 /home/ragu/.ansible/tmp/ansible-tmp-1793788286.440793-5473-258822211667990/AnsiballZ_setup.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+<192.168.1.34> Escalation succeeded
+<192.168.1.34> (0, b'\r\n\r\n{"ansible_facts": {"ansible_distribution": "Fedora", "ansible_distribution_release": "", "ansible_distribution_version": "44", "ansible_distribution_major_version": "44", "ansible_distribution_file_path": "/etc/redhat-release", "ansible_distribution_file_variety": "RedHat", "ansible_distribution_file_parsed": true, "ansible_os_family": "RedHat", "ansible_system_capabilities_enforced": "False", "ansible_system_capabilities": [], "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABgQCzSY6KJg0NEkCe8/YWHtRbUV8QryHe56Qz2BpzBiZeX8XqUZQdTf5WW3/ani5NDe9qF7T6ADIeHVzPQmgDpuiMVCKextRbuhY9NQy88VOuwwc1sn/r3qg7intIIX19ztsBMxm9kIxOn1hXoiQNX4xIoRGSrVRK/rnZX6tA9/yzSgKoHJIIsiekI4oGqUNLk9aAhiqtdqRPH2lbE2VKgvWcn+tgiS0WbESMZDqLgnkoDnVWVWw6NJgxXqMsZHqPIw3fRpzXApkVSVLMcTaNQpaYjXq6rI/vhumwGBJ8Hpf/Wt+hHYUcUhw/wDCkO/hM+n5ovmHGsLkCyTtCWTWifR/K+ZsUllFW7ipzdAt7Ad+wcZyqow+d+OLzKgzpv7mDYsBuan+xLfVHNv/tWR8GTaDZ8Nqgb5lcA39F/WXGKkvoBQO7fF/al3ZOWjhwWIIo7BMO360X5JWdgAzEPl1dxKQrzs1O6YlUxYHTxDhgzkA5+UO6CC6aFOsJ40Tbo0Tpdrs=", "ansible_ssh_host_key_rsa_public_keytype": "ssh-rsa", "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBIhGFSUtRF/FXPID+I6r8P9nUoTPdg1hzFpOBeh20yIac748CH5nU7yBPsJcH1nJgZ2hxCCtX2YHLC/FR+Au6yc=", "ansible_ssh_host_key_ecdsa_public_keytype": "ecdsa-sha2-nistp256", "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAILM2aDXpIIbRhCYZwrYRTLsOXcOVZhqbJqoj/I4lzXbE", "ansible_ssh_host_key_ed25519_public_keytype": "ssh-ed25519", "ansible_is_chroot": false, "ansible_apparmor": {"status": "disabled"}, "ansible_user_id": "root", "ansible_user_uid": 0, "ansible_user_gid": 0, "ansible_user_gecos": "Super User", "ansible_user_dir": "/root", "ansible_user_shell": "/bin/bash", "ansible_real_user_id": 0, "ansible_effective_user_id": 0, "ansible_real_group_id": 0, "ansible_effective_group_id": 0, "ansible_system": "Linux", "ansible_kernel": "7.2.14-200.fc44.x86_64", "ansible_kernel_version": "#1 SMP PREEMPT_DYNAMIC Fri Oct 30 17:28:20 UTC 2026", "ansible_machine": "x86_64", "ansible_python_version": "3.14.10", "ansible_fqdn": "fedora-server", "ansible_hostname": "fedora-server", "ansible_nodename": "fedora-server", "ansible_domain": "", "ansible_userspace_bits": "64", "ansible_architecture": "x86_64", "ansible_userspace_architecture": "x86_64", "ansible_machine_id": "ab619fa8746b478385d26e1c75a12e43", "ansible_virtualization_role": "guest", "ansible_virtualization_type": "VMware", "ansible_virtualization_tech_guest": ["VMware"], "ansible_virtualization_tech_host": [], "ansible_env": {"SHELL": "/bin/bash", "COLORTERM": "truecolor", "SUDO_GID": "1000", "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-pmxnomfucvhzytrtcxzfdodzkizgbemn ; /usr/bin/python3.14 /home/ragu/.ansible/tmp/ansible-tmp-1793788286.440793-5473-258822211667990/AnsiballZ_setup.py", "SUDO_USER": "ragu", "SUDO_TTY": "/dev/pts/0", "PWD": "/home/ragu", "LOGNAME": "root", "SUDO_HOME": "/home/ragu", "HOME": "/root", "LANG": "en_IN.UTF-8", "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;37;41:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.7z=01;31:*.ace=01;31:*.alz=01;31:*.apk=01;31:*.arc=01;31:*.arj=01;31:*.bz=01;31:*.bz2=01;31:*.cab=01;31:*.cpio=01;31:*.crate=01;31:*.deb=01;31:*.drpm=01;31:*.dwm=01;31:*.dz=01;31:*.ear=01;31:*.egg=01;31:*.esd=01;31:*.gz=01;31:*.jar=01;31:*.lha=01;31:*.lrz=01;31:*.lz=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.lzo=01;31:*.pyz=01;31:*.rar=01;31:*.rpm=01;31:*.rz=01;31:*.sar=01;31:*.swm=01;31:*.t7z=01;31:*.tar=01;31:*.taz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tgz=01;31:*.tlz=01;31:*.txz=01;31:*.tz=01;31:*.tzo=01;31:*.tzst=01;31:*.udeb=01;31:*.war=01;31:*.whl=01;31:*.wim=01;31:*.xz=01;31:*.z=01;31:*.zip=01;31:*.zoo=01;31:*.zst=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.jxl=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.m4a=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.oga=01;36:*.opus=01;36:*.spx=01;36:*.xspf=01;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:", "TERM": "xterm-256color", "USER": "root", "SHLVL": "0", "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/var/lib/snapd/snap/bin", "SUDO_UID": "1000", "MAIL": "/var/mail/root", "_": "/usr/bin/python3.14"}, "ansible_lsb": {}, "ansible_python": {"version": {"major": 3, "minor": 14, "micro": 10, "releaselevel": "final", "serial": 0}, "version_info": [3, 14, 10, "final", 0], "executable": "/usr/bin/python3.14", "has_sslcontext": true, "type": "cpython"}, "ansible_fibre_channel_wwn": [], "ansible_selinux_python_present": true, "ansible_selinux": {"status": "enabled", "policyvers": 35, "config_mode": "enforcing", "mode": "enforcing", "type": "targeted"}, "ansible_loadavg": {"1m": 0.0390625, "5m": 0.0498046875, "15m": 0.0126953125}, "ansible_hostnqn": "nqn.2014-08.org.nvmexpress:uuid:dc9a4d56-2b34-6cbd-a521-f4b1c12df4bd", "ansible_systemd": {"features": "+PAM +AUDIT +SELINUX -APPARMOR +IMA +IPE +SMACK +SECCOMP -GCRYPT +GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +KMOD +LIBCRYPTSETUP +LIBCRYPTSETUP_PLUGINS +LIBFDISK +PCRE2 +PWQUALITY +P11KIT +QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD +BPF_FRAMEWORK +BTF +XKBCOMMON +UTMP +SYSVINIT +LIBARCHIVE", "version": 259}, "ansible_fips": false, "ansible_pkg_mgr": "dnf5", "ansible_local": {}, "ansible_dns": {"nameservers": ["127.0.0.53"], "options": {"edns0": true, "trust-ad": true}, "search": ["."]}, "ansible_cmdline": {"BOOT_IMAGE": "(hd0,gpt2)/vmlinuz-7.2.14-200.fc44.x86_64", "root": "/dev/mapper/fedora-root", "ro": true, "rd.lvm.lv": "fedora/root", "rhgb": true, "quiet": true}, "ansible_proc_cmdline": {"BOOT_IMAGE": "(hd0,gpt2)/vmlinuz-7.2.14-200.fc44.x86_64", "root": "/dev/mapper/fedora-root", "ro": true, "rd.lvm.lv": "fedora/root", "rhgb": true, "quiet": true}, "ansible_date_time": {"year": "2026", "month": "11", "weekday": "Wednesday", "weekday_number": "3", "weeknumber": "44", "day": "04", "hour": "16", "minute": "01", "second": "29", "epoch": "1793788289", "epoch_int": "1793788289", "date": "2026-11-04", "time": "16:01:29", "iso8601_micro": "2026-11-04T10:31:29.866350Z", "iso8601": "2026-11-04T10:31:29Z", "iso8601_basic": "20261104T160129866350", "iso8601_basic_short": "20261104T160129", "tz": "IST", "tz_dst": "IST", "tz_offset": "+0530"}, "ansible_iscsi_iqn": "", "ansible_service_mgr": "systemd", "ansible_interfaces": ["lo", "ens160"], "ansible_ens160": {"device": "ens160", "macaddress": "00:0c:29:2d:f4:bd", "mtu": 1500, "active": true, "module": "vmxnet3", "type": "ether", "pciid": "0000:03:00.0", "speed": 10000, "promisc": false, "ipv4": {"address": "192.168.1.34", "broadcast": "192.168.1.255", "netmask": "255.255.255.0", "network": "192.168.1.0", "prefix": "24"}, "ipv6": [{"address": "fe80::e2ec:1a8:b846:8ea1", "prefix": "64", "scope": "link"}], "features": {"rx_checksumming": "on", "tx_checksumming": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ip_generic": "on", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "off [fixed]", "scatter_gather": "on", "tx_scatter_gather": "on", "tx_scatter_gather_fraglist": "off [fixed]", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "off [fixed]", "tx_tcp_mangleid_segmentation": "off", "tx_tcp6_segmentation": "on", "tx_tcp_accecn_segmentation": "off [fixed]", "generic_segmentation_offload": "on", "generic_receive_offload": "on", "large_receive_offload": "on", "rx_vlan_offload": "on", "tx_vlan_offload": "on", "ntuple_filters": "off [fixed]", "receive_hashing": "on", "highdma": "on", "rx_vlan_filter": "on [fixed]", "vlan_challenged": "off [fixed]", "tx_gso_robust": "off [fixed]", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gre_csum_segmentation": "off [fixed]", "tx_ipxip4_segmentation": "off [fixed]", "tx_ipxip6_segmentation": "off [fixed]", "tx_udp_tnl_segmentation": "off [fixed]", "tx_udp_tnl_csum_segmentation": "off [fixed]", "tx_gso_partial": "off [fixed]", "tx_tunnel_remcsum_segmentation": "off [fixed]", "tx_sctp_segmentation": "off [fixed]", "tx_esp_segmentation": "off [fixed]", "tx_udp_segmentation": "off [fixed]", "tx_gso_list": "off [fixed]", "tx_nocache_copy": "off", "loopback": "off [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "tls_hw_rx_offload": "off [fixed]", "rx_gro_hw": "off [fixed]", "rx_gro_list": "off", "macsec_hw_offload": "off [fixed]", "rx_udp_gro_forwarding": "off", "hsr_tag_ins_offload": "off [fixed]", "hsr_tag_rm_offload": "off [fixed]", "hsr_fwd_offload": "off [fixed]", "hsr_dup_offload": "off [fixed]"}, "timestamping": [], "hw_timestamp_filters": []}, "ansible_lo": {"device": "lo", "mtu": 65536, "active": true, "type": "loopback", "promisc": false, "ipv4": {"address": "127.0.0.1", "broadcast": "", "netmask": "255.0.0.0", "network": "127.0.0.0", "prefix": "8"}, "ipv6": [{"address": "::1", "prefix": "128", "scope": "host"}], "features": {"rx_checksumming": "on [fixed]", "tx_checksumming": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ip_generic": "on [fixed]", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "on [fixed]", "scatter_gather": "on", "tx_scatter_gather": "on [fixed]", "tx_scatter_gather_fraglist": "on [fixed]", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "on", "tx_tcp_mangleid_segmentation": "on", "tx_tcp6_segmentation": "on", "tx_tcp_accecn_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "on", "large_receive_offload": "off [fixed]", "rx_vlan_offload": "off [fixed]", "tx_vlan_offload": "off [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "highdma": "on [fixed]", "rx_vlan_filter": "off [fixed]", "vlan_challenged": "on [fixed]", "tx_gso_robust": "off [fixed]", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gre_csum_segmentation": "off [fixed]", "tx_ipxip4_segmentation": "off [fixed]", "tx_ipxip6_segmentation": "off [fixed]", "tx_udp_tnl_segmentation": "off [fixed]", "tx_udp_tnl_csum_segmentation": "off [fixed]", "tx_gso_partial": "off [fixed]", "tx_tunnel_remcsum_segmentation": "off [fixed]", "tx_sctp_segmentation": "on", "tx_esp_segmentation": "off [fixed]", "tx_udp_segmentation": "on", "tx_gso_list": "on", "tx_nocache_copy": "off [fixed]", "loopback": "on [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "tls_hw_rx_offload": "off [fixed]", "rx_gro_hw": "off [fixed]", "rx_gro_list": "off", "macsec_hw_offload": "off [fixed]", "rx_udp_gro_forwarding": "off", "hsr_tag_ins_offload": "off [fixed]", "hsr_tag_rm_offload": "off [fixed]", "hsr_fwd_offload": "off [fixed]", "hsr_dup_offload": "off [fixed]"}, "timestamping": [], "hw_timestamp_filters": []}, "ansible_default_ipv4": {"gateway": "192.168.1.1", "interface": "ens160", "address": "192.168.1.34", "broadcast": "192.168.1.255", "netmask": "255.255.255.0", "network": "192.168.1.0", "prefix": "24", "macaddress": "00:0c:29:2d:f4:bd", "mtu": 1500, "type": "ether", "alias": "ens160"}, "ansible_default_ipv6": {}, "ansible_all_ipv4_addresses": ["192.168.1.34"], "ansible_all_ipv6_addresses": ["fe80::e2ec:1a8:b846:8ea1"], "ansible_locally_reachable_ips": {"ipv4": ["127.0.0.0/8", "127.0.0.1", "192.168.1.34"], "ipv6": ["::1", "fe80::e2ec:1a8:b846:8ea1"]}, "ansible_processor": ["0", "GenuineIntel", "13th Gen Intel(R) Core(TM) i5-13450HX", "1", "GenuineIntel", "13th Gen Intel(R) Core(TM) i5-13450HX"], "ansible_flags": ["fpu", "vme", "de", "pse", "tsc", "msr", "pae", "mce", "cx8", "apic", "sep", "mtrr", "pge", "mca", "cmov", "pat", "pse36", "clflush", "mmx", "fxsr", "sse", "sse2", "ss", "ht", "syscall", "nx", "pdpe1gb", "rdtscp", "lm", "constant_tsc", "arch_perfmon", "rep_good", "nopl", "xtopology", "tsc_reliable", "nonstop_tsc", "cpuid", "tsc_known_freq", "pni", "pclmulqdq", "ssse3", "fma", "cx16", "pcid", "sse4_1", "sse4_2", "x2apic", "movbe", "popcnt", "aes", "xsave", "avx", "f16c", "rdrand", "hypervisor", "lahf_lm", "abm", "3dnowprefetch", "pti", "ssbd", "ibrs", "ibpb", "stibp", "fsgsbase", "tsc_adjust", "bmi1", "avx2", "smep", "bmi2", "erms", "invpcid", "rdseed", "adx", "smap", "clflushopt", "clwb", "sha_ni", "xsaveopt", "xsavec", "xgetbv1", "xsaves", "avx_vnni", "arat", "umip", "gfni", "vaes", "vpclmulqdq", "rdpid", "movdiri", "movdir64b", "fsrm", "md_clear", "serialize", "flush_l1d", "arch_capabilities"], "ansible_processor_count": 1, "ansible_processor_cores": 2, "ansible_processor_threads_per_core": 1, "ansible_processor_vcpus": 2, "ansible_processor_nproc": 2, "ansible_memtotal_mb": 1905, "ansible_memfree_mb": 378, "ansible_swaptotal_mb": 1904, "ansible_swapfree_mb": 1904, "ansible_memory_mb": {"real": {"total": 1905, "used": 1527, "free": 378}, "nocache": {"free": 1230, "used": 675}, "swap": {"total": 1904, "free": 1904, "used": 0, "cached": 0}}, "ansible_bios_date": "02/17/2026", "ansible_bios_vendor": "Phoenix Technologies LTD", "ansible_bios_version": "6.00", "ansible_board_asset_tag": "NA", "ansible_board_name": "440BX Desktop Reference Platform", "ansible_board_serial": "None", "ansible_board_vendor": "Intel Corporation", "ansible_board_version": "None", "ansible_chassis_asset_tag": "No Asset Tag", "ansible_chassis_serial": "None", "ansible_chassis_vendor": "No Enclosure", "ansible_chassis_version": "N/A", "ansible_form_factor": "Other", "ansible_product_name": "VMware Virtual Platform", "ansible_product_serial": "VMware-56 4d 9a dc 34 2b bd 6c-a5 21 f4 b1 c1 2d f4 bd", "ansible_product_uuid": "dc9a4d56-2b34-6cbd-a521-f4b1c12df4bd", "ansible_product_version": "None", "ansible_system_vendor": "VMware, Inc.", "ansible_devices": {"nvme0n1": {"virtual": 1, "links": {"ids": ["nvme-VMware_Virtual_NVMe_Disk_VMware_NVME_0000", "nvme-VMware_Virtual_NVMe_Disk_VMware_NVME_0000_1", "nvme-eui.4c89bddd710adf8e000c296c1667b79f"], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": "VMware Virtual NVMe Disk", "sas_address": null, "sas_device_handle": null, "serial": "VMware NVME_0000", "removable": "0", "support_discard": "0", "partitions": {"nvme0n1p3": {"links": {"ids": ["lvm-pv-uuid-Nw1zM2-aLNn-NwjJ-VU8d-CTwX-a2WG-tGiT8k", "nvme-VMware_Virtual_NVMe_Disk_VMware_NVME_0000-part3", "nvme-VMware_Virtual_NVMe_Disk_VMware_NVME_0000_1-part3", "nvme-eui.4c89bddd710adf8e000c296c1667b79f-part3"], "uuids": [], "labels": [], "masters": ["dm-0"]}, "start": "4198400", "sectorsize": 512, "sectors": 37742592, "size": "18.00 GB", "uuid": null, "holders": ["fedora-root"]}, "nvme0n1p1": {"links": {"ids": ["nvme-VMware_Virtual_NVMe_Disk_VMware_NVME_0000-part1", "nvme-VMware_Virtual_NVMe_Disk_VMware_NVME_0000_1-part1", "nvme-eui.4c89bddd710adf8e000c296c1667b79f-part1"], "uuids": [], "labels": [], "masters": []}, "start": "2048", "sectorsize": 512, "sectors": 2048, "size": "1.00 MB", "uuid": null, "holders": []}, "nvme0n1p2": {"links": {"ids": ["nvme-VMware_Virtual_NVMe_Disk_VMware_NVME_0000-part2", "nvme-VMware_Virtual_NVMe_Disk_VMware_NVME_0000_1-part2", "nvme-eui.4c89bddd710adf8e000c296c1667b79f-part2"], "uuids": ["8775aaad-ba8f-493b-9468-f25e2fb599db"], "labels": [], "masters": []}, "start": "4096", "sectorsize": 512, "sectors": 4194304, "size": "2.00 GB", "uuid": "8775aaad-ba8f-493b-9468-f25e2fb599db", "holders": []}}, "rotational": "0", "scheduler_mode": "none", "sectorsize": "512", "sectors": 41943040, "size": "20.00 GB", "host": "Non-Volatile memory controller: VMware NVMe SSD Controller", "holders": []}, "sr0": {"virtual": 1, "links": {"ids": ["ata-VMware_Virtual_SATA_CDRW_Drive_01000000000000000001"], "uuids": ["2026-04-22-13-39-48-00"], "labels": ["Fedora-S-dvd-x86_64-44"], "masters": []}, "vendor": "NECVMWar", "model": "VMware SATA CD01", "sas_address": null, "sas_device_handle": null, "removable": "1", "support_discard": "0", "partitions": {}, "rotational": "1", "scheduler_mode": "bfq", "sectorsize": "2048", "sectors": 1910656, "size": "3.64 GB", "host": "SATA controller: VMware SATA AHCI controller", "holders": []}, "dm-0": {"virtual": 1, "links": {"ids": ["dm-name-fedora-root", "dm-uuid-LVM-HbMxnsE75MiDoO1LZie0TqdMe1yP5sYJxNULiZhjGyOikSe00CVEJ884vx2QTQm6"], "uuids": ["31f6a2d8-1196-40d1-9ed1-d9648abc328f"], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "0", "partitions": {}, "rotational": "0", "scheduler_mode": "", "sectorsize": "512", "sectors": 31457280, "size": "15.00 GB", "host": "", "holders": []}, "zram0": {"virtual": 1, "links": {"ids": [], "uuids": ["db035c8c-d90e-4968-a38f-78ea8e208fd7"], "labels": ["zram0"], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "", "sectorsize": "4096", "sectors": 487680, "size": "1.86 GB", "host": "", "holders": []}}, "ansible_device_links": {"ids": {"sr0": ["ata-VMware_Virtual_SATA_CDRW_Drive_01000000000000000001"], "nvme0n1p3": ["lvm-pv-uuid-Nw1zM2-aLNn-NwjJ-VU8d-CTwX-a2WG-tGiT8k", "nvme-VMware_Virtual_NVMe_Disk_VMware_NVME_0000-part3", "nvme-VMware_Virtual_NVMe_Disk_VMware_NVME_0000_1-part3", "nvme-eui.4c89bddd710adf8e000c296c1667b79f-part3"], "nvme0n1p2": ["nvme-VMware_Virtual_NVMe_Disk_VMware_NVME_0000-part2", "nvme-VMware_Virtual_NVMe_Disk_VMware_NVME_0000_1-part2", "nvme-eui.4c89bddd710adf8e000c296c1667b79f-part2"], "nvme0n1p1": ["nvme-VMware_Virtual_NVMe_Disk_VMware_NVME_0000-part1", "nvme-VMware_Virtual_NVMe_Disk_VMware_NVME_0000_1-part1", "nvme-eui.4c89bddd710adf8e000c296c1667b79f-part1"], "nvme0n1": ["nvme-VMware_Virtual_NVMe_Disk_VMware_NVME_0000", "nvme-VMware_Virtual_NVMe_Disk_VMware_NVME_0000_1", "nvme-eui.4c89bddd710adf8e000c296c1667b79f"], "dm-0": ["dm-name-fedora-root", "dm-uuid-LVM-HbMxnsE75MiDoO1LZie0TqdMe1yP5sYJxNULiZhjGyOikSe00CVEJ884vx2QTQm6"]}, "uuids": {"sr0": ["2026-04-22-13-39-48-00"], "nvme0n1p2": ["8775aaad-ba8f-493b-9468-f25e2fb599db"], "zram0": ["db035c8c-d90e-4968-a38f-78ea8e208fd7"], "dm-0": ["31f6a2d8-1196-40d1-9ed1-d9648abc328f"]}, "labels": {"sr0": ["Fedora-S-dvd-x86_64-44"], "zram0": ["zram0"]}, "masters": {"nvme0n1p3": ["dm-0"]}}, "ansible_uptime_seconds": 4517, "ansible_lvm": {"lvs": {"root": {"size_g": "15.00", "vg": "fedora"}}, "vgs": {"fedora": {"size_g": "18.00", "free_g": "3.00", "num_lvs": "1", "num_pvs": "1", "lvs": {"root": {"size_g": "15.00"}}}}, "pvs": {"/dev/nvme0n1p3": {"size_g": "18.00", "free_g": "3.00", "vg": "fedora"}}}, "ansible_mounts": [{"mount": "/", "device": "/dev/mapper/fedora-root", "fstype": "xfs", "options": "rw,seclabel,relatime,inode64,logbufs=8,logbsize=32k,noquota", "dump": 0, "passno": 0, "size_total": 16039018496, "size_available": 13068107776, "block_size": 4096, "block_total": 3915776, "block_available": 3190456, "block_used": 725320, "inode_total": 7864320, "inode_available": 7786791, "inode_used": 77529, "uuid": "31f6a2d8-1196-40d1-9ed1-d9648abc328f"}, {"mount": "/boot", "device": "/dev/nvme0n1p2", "fstype": "xfs", "options": "rw,seclabel,relatime,inode64,logbufs=8,logbsize=32k,noquota", "dump": 0, "passno": 0, "size_total": 2080374784, "size_available": 1517735936, "block_size": 4096, "block_total": 507904, "block_available": 370541, "block_used": 137363, "inode_total": 1048576, "inode_available": 1048205, "inode_used": 371, "uuid": "8775aaad-ba8f-493b-9468-f25e2fb599db"}], "gather_subset": ["all"], "module_setup": true}, "invocation": {"module_args": {"gather_subset": ["all"], "gather_timeout": 10, "filter": [], "fact_path": "/etc/ansible/facts.d"}}}\r\n\x1b]3008;end=02b08187399842bd92624361aaf51921\x1b\\', b'Shared connection to 192.168.1.34 closed.\r\n')
+<192.168.1.34> ESTABLISH SSH CONNECTION FOR USER: None
+<192.168.1.34> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 192.168.1.34 '/bin/sh -c '"'"'rm -f -r /home/ragu/.ansible/tmp/ansible-tmp-1793788286.440793-5473-258822211667990/ > /dev/null 2>&1 && sleep 0'"'"''
+<192.168.1.34> (0, b'', b'')
+ok: [192.168.1.34]
+
+TASK [updating the cache of dnf] ***********************************************
+task path: /home/ragu/ansible_course/playbook.yaml:6
+<192.168.1.34> ESTABLISH SSH CONNECTION FOR USER: None
+<192.168.1.34> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 192.168.1.34 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<192.168.1.34> (0, b'/home/ragu\n', b'')
+<192.168.1.34> ESTABLISH SSH CONNECTION FOR USER: None
+<192.168.1.34> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 192.168.1.34 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/ragu/.ansible/tmp `"&& mkdir "` echo /home/ragu/.ansible/tmp/ansible-tmp-1793788287.5629542-5495-260217146216328 `" && echo ansible-tmp-1793788287.5629542-5495-260217146216328="` echo /home/ragu/.ansible/tmp/ansible-tmp-1793788287.5629542-5495-260217146216328 `" ) && sleep 0'"'"''
+<192.168.1.34> (0, b'ansible-tmp-1793788287.5629542-5495-260217146216328=/home/ragu/.ansible/tmp/ansible-tmp-1793788287.5629542-5495-260217146216328\n', b'')
+Using module file /usr/lib/python3.14/site-packages/ansible/modules/dnf5.py
+<192.168.1.34> PUT /home/ragu/.ansible/tmp/ansible-local-5417vzr6hkbi/tmpp57_7gku TO /home/ragu/.ansible/tmp/ansible-tmp-1793788287.5629542-5495-260217146216328/AnsiballZ_dnf5.py
+<192.168.1.34> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 '[192.168.1.34]'
+<192.168.1.34> (0, b'sftp> put /home/ragu/.ansible/tmp/ansible-local-5417vzr6hkbi/tmpp57_7gku /home/ragu/.ansible/tmp/ansible-tmp-1793788287.5629542-5495-260217146216328/AnsiballZ_dnf5.py\n', b'')
+<192.168.1.34> ESTABLISH SSH CONNECTION FOR USER: None
+<192.168.1.34> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 192.168.1.34 '/bin/sh -c '"'"'chmod u+rwx /home/ragu/.ansible/tmp/ansible-tmp-1793788287.5629542-5495-260217146216328/ /home/ragu/.ansible/tmp/ansible-tmp-1793788287.5629542-5495-260217146216328/AnsiballZ_dnf5.py && sleep 0'"'"''
+<192.168.1.34> (0, b'', b'')
+<192.168.1.34> ESTABLISH SSH CONNECTION FOR USER: None
+<192.168.1.34> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 -tt 192.168.1.34 '/bin/sh -c '"'"'sudo -H -S -p "[sudo via ansible, key=gdgrnincunbrhjjngsfhlwrsryqqntie] password:" -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-gdgrnincunbrhjjngsfhlwrsryqqntie ; /usr/bin/python3.14 /home/ragu/.ansible/tmp/ansible-tmp-1793788287.5629542-5495-260217146216328/AnsiballZ_dnf5.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+<192.168.1.34> Escalation succeeded
+<192.168.1.34> (0, b'\r\n\r\n{"results": ["Installed: httpd-2.4.69-1.fc44.x86_64"], "changed": true, "msg": "", "rc": 0, "invocation": {"module_args": {"name": ["httpd"], "state": "present", "allow_downgrade": false, "allowerasing": false, "autoremove": false, "bugfix": false, "cacheonly": false, "disable_gpg_check": false, "disable_plugin": [], "disablerepo": [], "download_only": false, "enable_plugin": [], "enablerepo": [], "exclude": [], "installroot": "/", "install_weak_deps": true, "security": false, "skip_broken": false, "update_cache": false, "update_only": false, "validate_certs": true, "sslverify": true, "lock_timeout": 30, "auto_install_module_deps": true, "best": null, "conf_file": null, "disable_excludes": null, "download_dir": null, "list": null, "nobest": null, "releasever": null}}}\r\n\x1b]3008;end=ef5448158deb44d78967a4804319448a\x1b\\', b'Shared connection to 192.168.1.34 closed.\r\n')
+<192.168.1.34> ESTABLISH SSH CONNECTION FOR USER: None
+<192.168.1.34> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 192.168.1.34 '/bin/sh -c '"'"'rm -f -r /home/ragu/.ansible/tmp/ansible-tmp-1793788287.5629542-5495-260217146216328/ > /dev/null 2>&1 && sleep 0'"'"''
+<192.168.1.34> (0, b'', b'')
+changed: [192.168.1.34] => {
+    "changed": true,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "allowerasing": false,
+            "auto_install_module_deps": true,
+            "autoremove": false,
+            "best": null,
+            "bugfix": false,
+            "cacheonly": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_dir": null,
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_weak_deps": true,
+            "installroot": "/",
+            "list": null,
+            "lock_timeout": 30,
+            "name": [
+                "httpd"
+            ],
+            "nobest": null,
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "sslverify": true,
+            "state": "present",
+            "update_cache": false,
+            "update_only": false,
+            "validate_certs": true
+        }
+    },
+    "msg": "",
+    "rc": 0,
+    "results": [
+        "Installed: httpd-2.4.69-1.fc44.x86_64"
+    ]
+}
+
+TASK [removing unsed dependencies] *********************************************
+task path: /home/ragu/ansible_course/playbook.yaml:10
+<192.168.1.34> ESTABLISH SSH CONNECTION FOR USER: None
+<192.168.1.34> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 192.168.1.34 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<192.168.1.34> (0, b'/home/ragu\n', b'')
+<192.168.1.34> ESTABLISH SSH CONNECTION FOR USER: None
+<192.168.1.34> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 192.168.1.34 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/ragu/.ansible/tmp `"&& mkdir "` echo /home/ragu/.ansible/tmp/ansible-tmp-1793788289.8682957-5522-104941366875923 `" && echo ansible-tmp-1793788289.8682957-5522-104941366875923="` echo /home/ragu/.ansible/tmp/ansible-tmp-1793788289.8682957-5522-104941366875923 `" ) && sleep 0'"'"''
+<192.168.1.34> (0, b'ansible-tmp-1793788289.8682957-5522-104941366875923=/home/ragu/.ansible/tmp/ansible-tmp-1793788289.8682957-5522-104941366875923\n', b'')
+Using module file /usr/lib/python3.14/site-packages/ansible/modules/dnf5.py
+<192.168.1.34> PUT /home/ragu/.ansible/tmp/ansible-local-5417vzr6hkbi/tmp5yn7j521 TO /home/ragu/.ansible/tmp/ansible-tmp-1793788289.8682957-5522-104941366875923/AnsiballZ_dnf5.py
+<192.168.1.34> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 '[192.168.1.34]'
+<192.168.1.34> (0, b'sftp> put /home/ragu/.ansible/tmp/ansible-local-5417vzr6hkbi/tmp5yn7j521 /home/ragu/.ansible/tmp/ansible-tmp-1793788289.8682957-5522-104941366875923/AnsiballZ_dnf5.py\n', b'')
+<192.168.1.34> ESTABLISH SSH CONNECTION FOR USER: None
+<192.168.1.34> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 192.168.1.34 '/bin/sh -c '"'"'chmod u+rwx /home/ragu/.ansible/tmp/ansible-tmp-1793788289.8682957-5522-104941366875923/ /home/ragu/.ansible/tmp/ansible-tmp-1793788289.8682957-5522-104941366875923/AnsiballZ_dnf5.py && sleep 0'"'"''
+<192.168.1.34> (0, b'', b'')
+<192.168.1.34> ESTABLISH SSH CONNECTION FOR USER: None
+<192.168.1.34> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 -tt 192.168.1.34 '/bin/sh -c '"'"'sudo -H -S -p "[sudo via ansible, key=kuaskjokccnglzsnyjlyzyaeeunlovpr] password:" -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-kuaskjokccnglzsnyjlyzyaeeunlovpr ; /usr/bin/python3.14 /home/ragu/.ansible/tmp/ansible-tmp-1793788289.8682957-5522-104941366875923/AnsiballZ_dnf5.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+<192.168.1.34> Escalation succeeded
+<192.168.1.34> (0, b'\r\n\r\n{"results": [], "changed": false, "msg": "Nothing to do", "rc": 0, "invocation": {"module_args": {"autoremove": true, "allow_downgrade": false, "allowerasing": false, "bugfix": false, "cacheonly": false, "disable_gpg_check": false, "disable_plugin": [], "disablerepo": [], "download_only": false, "enable_plugin": [], "enablerepo": [], "exclude": [], "installroot": "/", "install_weak_deps": true, "name": [], "security": false, "skip_broken": false, "update_cache": false, "update_only": false, "validate_certs": true, "sslverify": true, "lock_timeout": 30, "auto_install_module_deps": true, "best": null, "conf_file": null, "disable_excludes": null, "download_dir": null, "list": null, "nobest": null, "releasever": null, "state": null}}}\r\n\x1b]3008;end=e3dbf934fa3848e99373dc7d8d657013\x1b\\', b'Shared connection to 192.168.1.34 closed.\r\n')
+<192.168.1.34> ESTABLISH SSH CONNECTION FOR USER: None
+<192.168.1.34> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 192.168.1.34 '/bin/sh -c '"'"'rm -f -r /home/ragu/.ansible/tmp/ansible-tmp-1793788289.8682957-5522-104941366875923/ > /dev/null 2>&1 && sleep 0'"'"''
+<192.168.1.34> (0, b'', b'')
+ok: [192.168.1.34] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "allowerasing": false,
+            "auto_install_module_deps": true,
+            "autoremove": true,
+            "best": null,
+            "bugfix": false,
+            "cacheonly": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_dir": null,
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_weak_deps": true,
+            "installroot": "/",
+            "list": null,
+            "lock_timeout": 30,
+            "name": [],
+            "nobest": null,
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "sslverify": true,
+            "state": null,
+            "update_cache": false,
+            "update_only": false,
+            "validate_certs": true
+        }
+    },
+    "msg": "Nothing to do",
+    "rc": 0,
+    "results": []
+}
+
+TASK [removing httpd package] **************************************************
+task path: /home/ragu/ansible_course/playbook.yaml:13
+<192.168.1.34> ESTABLISH SSH CONNECTION FOR USER: None
+<192.168.1.34> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 192.168.1.34 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<192.168.1.34> (0, b'/home/ragu\n', b'')
+<192.168.1.34> ESTABLISH SSH CONNECTION FOR USER: None
+<192.168.1.34> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 192.168.1.34 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/ragu/.ansible/tmp `"&& mkdir "` echo /home/ragu/.ansible/tmp/ansible-tmp-1793788292.3282933-5536-157975565348224 `" && echo ansible-tmp-1793788292.3282933-5536-157975565348224="` echo /home/ragu/.ansible/tmp/ansible-tmp-1793788292.3282933-5536-157975565348224 `" ) && sleep 0'"'"''
+<192.168.1.34> (0, b'ansible-tmp-1793788292.3282933-5536-157975565348224=/home/ragu/.ansible/tmp/ansible-tmp-1793788292.3282933-5536-157975565348224\n', b'')
+Using module file /usr/lib/python3.14/site-packages/ansible/modules/dnf5.py
+<192.168.1.34> PUT /home/ragu/.ansible/tmp/ansible-local-5417vzr6hkbi/tmplwuochr0 TO /home/ragu/.ansible/tmp/ansible-tmp-1793788292.3282933-5536-157975565348224/AnsiballZ_dnf5.py
+<192.168.1.34> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 '[192.168.1.34]'
+<192.168.1.34> (0, b'sftp> put /home/ragu/.ansible/tmp/ansible-local-5417vzr6hkbi/tmplwuochr0 /home/ragu/.ansible/tmp/ansible-tmp-1793788292.3282933-5536-157975565348224/AnsiballZ_dnf5.py\n', b'')
+<192.168.1.34> ESTABLISH SSH CONNECTION FOR USER: None
+<192.168.1.34> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 192.168.1.34 '/bin/sh -c '"'"'chmod u+rwx /home/ragu/.ansible/tmp/ansible-tmp-1793788292.3282933-5536-157975565348224/ /home/ragu/.ansible/tmp/ansible-tmp-1793788292.3282933-5536-157975565348224/AnsiballZ_dnf5.py && sleep 0'"'"''
+<192.168.1.34> (0, b'', b'')
+<192.168.1.34> ESTABLISH SSH CONNECTION FOR USER: None
+<192.168.1.34> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 -tt 192.168.1.34 '/bin/sh -c '"'"'sudo -H -S -p "[sudo via ansible, key=xwbqjbwsbznepuccdwyrjraoycdvkbzc] password:" -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-xwbqjbwsbznepuccdwyrjraoycdvkbzc ; /usr/bin/python3.14 /home/ragu/.ansible/tmp/ansible-tmp-1793788292.3282933-5536-157975565348224/AnsiballZ_dnf5.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+<192.168.1.34> Escalation succeeded
+<192.168.1.34> (0, b'\r\n\r\n{"results": ["Removed: httpd-2.4.69-1.fc44.x86_64"], "changed": true, "msg": "", "rc": 0, "invocation": {"module_args": {"name": ["httpd"], "state": "removed", "allow_downgrade": false, "allowerasing": false, "autoremove": false, "bugfix": false, "cacheonly": false, "disable_gpg_check": false, "disable_plugin": [], "disablerepo": [], "download_only": false, "enable_plugin": [], "enablerepo": [], "exclude": [], "installroot": "/", "install_weak_deps": true, "security": false, "skip_broken": false, "update_cache": false, "update_only": false, "validate_certs": true, "sslverify": true, "lock_timeout": 30, "auto_install_module_deps": true, "best": null, "conf_file": null, "disable_excludes": null, "download_dir": null, "list": null, "nobest": null, "releasever": null}}}\r\n\x1b]3008;end=b4c445808af3492280643dc167be2f87\x1b\\', b'Shared connection to 192.168.1.34 closed.\r\n')
+<192.168.1.34> ESTABLISH SSH CONNECTION FOR USER: None
+<192.168.1.34> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ragu/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/ragu/.ansible/cp/63587b6b76"' -o NumberOfPasswordPrompts=1 192.168.1.34 '/bin/sh -c '"'"'rm -f -r /home/ragu/.ansible/tmp/ansible-tmp-1793788292.3282933-5536-157975565348224/ > /dev/null 2>&1 && sleep 0'"'"''
+<192.168.1.34> (0, b'', b'')
+changed: [192.168.1.34] => {
+    "changed": true,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "allowerasing": false,
+            "auto_install_module_deps": true,
+            "autoremove": false,
+            "best": null,
+            "bugfix": false,
+            "cacheonly": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_dir": null,
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_weak_deps": true,
+            "installroot": "/",
+            "list": null,
+            "lock_timeout": 30,
+            "name": [
+                "httpd"
+            ],
+            "nobest": null,
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "sslverify": true,
+            "state": "removed",
+            "update_cache": false,
+            "update_only": false,
+            "validate_certs": true
+        }
+    },
+    "msg": "",
+    "rc": 0,
+    "results": [
+        "Removed: httpd-2.4.69-1.fc44.x86_64"
+    ]
+}
+
+PLAY RECAP *********************************************************************
+192.168.1.34               : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

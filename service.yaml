@@ -1,0 +1,9 @@
+---
+- name: test the service module of ansible
+  hosts: fedora
+  become: true
+  tasks:
+    - name: checking the running status of module
+      ansible.builtin.service:
+        name: httpd
+        state: started
