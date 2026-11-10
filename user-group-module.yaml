@@ -27,3 +27,15 @@
         ssh_key_passphrase: "i am batman"
         password: "{{  vault_john_hash  }}"
         update_password: "always"
+
+    - name: testing group modules
+      ansible.builtin.group:
+        name: developers
+        state: present
+        gid: 1041
+    - name: adding john to created group
+      ansible.builtin.user:
+        name: john
+        groups:
+          - developers
+        append: true
